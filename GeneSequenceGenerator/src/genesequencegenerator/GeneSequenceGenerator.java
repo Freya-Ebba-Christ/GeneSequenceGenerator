@@ -250,7 +250,7 @@ public class GeneSequenceGenerator {
         LinkedList<String> resultList = new LinkedList<String>();
         String nodeToVisit;
         resultList.add("AAAAAA");
-        boolean verbose = false; // set to view the results of all tested sequences during the check
+        boolean verbose = false; // set to true to view the results of all tested sequences during the sanity check
 
         int desiredNumberOfSequences = 96;
         int cnt = 0;
