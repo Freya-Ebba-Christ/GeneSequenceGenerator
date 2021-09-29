@@ -228,29 +228,117 @@ public class GeneSequenceGenerator {
      *
      * Example output::
      *
-     * Printing 96 sequences. AAAAAA CCACAA ATAATT AGCACA TTGAAA TAAGAC ACTTAA
-     * AGAAGC GACAGA ACAGTA CGAAAT AATACT GGTAAA AAGGCA TAATCA AATCTA AAATGG
-     * TCAAAG AGAGAG GAGAAT CACAAC CTAACA CAAATG ATCAAG AACTAT GTATAA CATGAA
-     * ACGAAC AAACCC TAAAGT ATACGA AGGCAA TGAATA TACCAA GAACAG TCTCAC CCATCC
-     * CCGCCT CGAAAT CCCTAG CGACGG CTACTC TCACTT CCAGGT GCCCAT TCAAAG GCACGC
-     * CTTCAT CCTCTG GAACAG GTCATC AGAAGC ACAGTA CGAAAT AATACT TCACTT GTTTTT
-     * AGTATG ACCAGT ATTGGT ATCTTA CTAACA CTGGTT CAAATG ATCAAG GAAGTT GTACCT
-     * AGCGTT AGATCT CTACTC TAAAGT TTCACT ATACGA GTAAGG TTATTG TGAATA ATGCTG
-     * ACGTTT TGCAGG TGCCCC AGAAGC CGCGCG AATACT GGGACG AGATCT AGTATG TTCACT
-     * ACCAGT AGTGCC ACCCCG ATCAAG AGCGTT TTTGAG TTGGCC TGGTAC TCGGAT 
+     * Printing 96 sequences. 
+     * AAAAAA
+     * CCACAA
+     * ATAATT
+     * AGCACA
+     * TTGAAA
+     * TAAGAC
+     * ACTTAA
+     * AGAAGC
+     * GACAGA
+     * ACAGTA
+     * CGAAAT
+     * AATACT
+     * GGTAAA
+     * AAGGCA
+     * TAATCA
+     * AATCTA
+     * AAATGG
+     * TCAAAG
+     * AGAGAG
+     * GAGAAT
+     * CACAAC
+     * CTAACA
+     * CAAATG
+     * ATCAAG
+     * AACTAT
+     * GTATAA
+     * CATGAA
+     * ACGAAC
+     * AAACCC
+     * TAAAGT
+     * ATACGA
+     * AGGCAA
+     * TGAATA
+     * TACCAA
+     * GAACAG
+     * TCTCAC
+     * CCATCC
+     * CCGCCT
+     * CCCTAG
+     * CGACGG
+     * CTACTC
+     * TCACTT
+     * CCAGGT
+     * GCCCAT
+     * GCACGC
+     * CTTCAT
+     * CCTCTG
+     * GTCATC
+     * GTTTTT
+     * AGTATG
+     * ACCAGT
+     * ATTGGT
+     * ATCTTA
+     * CTGGTT
+     * GAAGTT
+     * GTACCT
+     * AGCGTT
+     * AGATCT
+     * TTCACT
+     * GTAAGG
+     * TTATTG
+     * ATGCTG
+     * ACGTTT
+     * TGCAGG
+     * TGCCCC
+     * CGCGCG
+     * GGGACG
+     * AGTGCC
+     * ACCCCG
+     * TTTGAG
+     * TTGGCC
+     * TGGTAC
+     * TCGGAT
+     * CTGAGC
+     * TTGTGT
+     * TAGATC
+     * GTGCAC
+     * GGCGAC
+     * TAGGGG
+     * TACTGC
+     * TCCGTC
+     * GATGGC
+     * TCTTGG
+     * ATTTCG
+     * CGTTGC
+     * GGATTC
+     * GGAGGA
+     * GACTTG
+     * GGCTGT
+     * GCCGGG
+     * CACCGT
+     * TATCCG
+     * GCTACC
+     * GAGTCC
+     * CAGTGA
+     * GCGATA
      * 
      * Running brute force sanity check. Is this a valid result? Yes!
      *
      */
-
     public static void main(String[] args) {
 
         GeneSequenceGraph aGeneSequenceGraph = new GeneSequenceGraph(6);
+        System.out.println("building graph");
         aGeneSequenceGraph.build();
+        System.out.println("building graph has finished");
         LinkedList<String> resultList = new LinkedList<String>();
         String nodeToVisit;
         resultList.add("AAAAAA");
-        boolean verbose = false; // set to true to view the results of all tested sequences during the sanity check
+        boolean verbose = false; // set to true to view the results of all tested sequences during the check
 
         int desiredNumberOfSequences = 96;
         int cnt = 0;
