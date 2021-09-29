@@ -225,14 +225,14 @@ public class GeneSequenceGraph {
     }
 
     public boolean checkMutations(LinkedList<String> listOfGenes, int minMutations, boolean verbose) {
-        for (String gene_a : listOfGenes) {
-            for (String gene_b : listOfGenes) {
-                int numDifferences = getGeneSequenceHelper().getNumDifferences(gene_a, gene_b);
-                if (numDifferences != 0 && numDifferences < minMutations) {
+        for (int i = 0; i < listOfGenes.size(); i++) {
+            for (int j = 0; j < listOfGenes.size(); j++) {
+                int numDifferences = getGeneSequenceHelper().getNumDifferences(listOfGenes.get(i), listOfGenes.get(j));
+                if (i != j && numDifferences < minMutations) { // due to symmetry, elements on the diagonal are always identical
                     return false;
                 } else if (verbose) {
                     if (numDifferences != 0) {
-                        System.out.println(gene_a + " " + gene_b + " " + numDifferences);
+                        System.out.println(listOfGenes.get(i) + " " + listOfGenes.get(j) + " " + numDifferences);
                     }
                 }
             }
@@ -268,7 +268,6 @@ public class GeneSequenceGraph {
         GeneSequenceGraphNode currentNode = rootNode;
         LinkedList<AbstractGraphNode> listOfNodes = new LinkedList<AbstractGraphNode>();
         listOfNodes.addAll(currentNode.getChildNodes());
-
         while (listOfNodes.size() != 0) {
             currentNode = (GeneSequenceGraphNode) listOfNodes.removeFirst();
             addChildNodes(currentNode);
@@ -276,7 +275,6 @@ public class GeneSequenceGraph {
         }
 
         for (GeneSequenceGraphNode node : getGraphNodeDictionary().values()) {
-
             if (node.isLeafNode()) {
                 for (int n = 0; n < getSequenceLength(); n++) {
                     for (int k = 0; k < getNumSymbols() - 1; k++) {
