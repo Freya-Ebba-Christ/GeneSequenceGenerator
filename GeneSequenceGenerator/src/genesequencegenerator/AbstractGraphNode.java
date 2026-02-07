@@ -171,8 +171,8 @@ import java.util.*;
 
 /**
  *
- * @author Olaf Christ
- * @email Christ_p@gmx.de
+ * @author Freya Ebba Christ
+ * @email freya.ebba.christ@gmail.com
  */
 
 public abstract class AbstractGraphNode {
