@@ -171,9 +171,8 @@ import java.util.*;
 
 /**
  *
- * @author Olaf Christ
- * @email Christ_p@gmx.de
- *
+ * @author Freya Ebba Christ
+ * @email freya.ebba.christ@gmail.com
  */
 /**
  * This code generates gene sequences with a Hamming distance of at least 3
