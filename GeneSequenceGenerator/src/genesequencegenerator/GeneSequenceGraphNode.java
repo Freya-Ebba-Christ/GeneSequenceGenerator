@@ -168,8 +168,8 @@ Library.
 
 /**
  *
- * @author Olaf Christ
- * @email Christ_p@gmx.de
+ * @author Freya Ebba Christ
+ * @email freya.ebba.christ@gmail.com
  */
 
 package genesequencegenerator;
