@@ -6,8 +6,8 @@ The pdf contained in this folder further illustrates how the algorithm works
 and how the generated graphs look like.
 
 
-@author Olaf Christ
-@email Christ_p@gmx.de
+@author Freya Ebba Christ
+@email freya.ebba.christ@gmail.com
 
 
 This code generates gene sequences with a Hamming distance of at least 3
